@@ -4,9 +4,9 @@ using namespace std;
 int main(){
     string num;
     cin >> num;
-    vector<int> res(10,0);
+    vector<int> res(10,0);  // 存储0-9数字出现的次数
     for(int i = 0; i < num.size(); i++){
-        res[num[i]-'0']++;
+        res[num[i]-'0']++;  // 将字符转换为对应的整数索引并计数
     }
     for(int i=0;i<10;i++){
         if(res[i] != 0){
