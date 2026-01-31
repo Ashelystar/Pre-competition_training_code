@@ -1,0 +1,17 @@
+1.  输出缺少空格 / 换行符等等
+方法：仔细查看样例，在提交之前先跑一下测试用例确认格式是否正确
+
+2. 复杂格式的打印
+例：L002的沙漏
+参考方法：使用for循环，循环内只打印一个字符，以此控制字符/空格的打印个数
+
+3. 浮点数的有效位数
+方法：
+	使用 printf("%.2f",)（两位小数）
+	cout << fixed << setprecision(2)     (需要include<iomanip>)
+
+4. 固定位数输出
+例：L008一个数字固定5字符宽度
+方法
+	printf("%5d", num) / printf("%*d", width, num)
+	cout << setw(5) << setfill( ' ' )    (include<iomanip>)
