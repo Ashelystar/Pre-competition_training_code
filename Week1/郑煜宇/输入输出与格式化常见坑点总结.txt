@@ -1,0 +1,51 @@
+1.  输出缺少空格 / 换行符等等
+方法：仔细查看样例，在提交之前先跑一下测试用例确认格式是否正确
+
+2. 读取带有空格的一行字符串
+例：L011
+	C:  fgets(str, maxsize, stdin) / scanf("%[^\n]", str) // 读到换行符停止,需getchar()吃掉\n
+	C++: getline(cin, str) / cin.getline(str, maxsize) 
+
+3. 复杂格式的打印
+例：L002的沙漏
+参考方法：使用for循环，循环内只打印一个字符，以此控制字符/空格的打印个数
+
+4. 浮点数的有效位数
+例：L017保留两位小数
+方法：
+	使用 printf("%.2f",)（两位小数）
+	cout << fixed << setprecision(2)     (需要include<iomanip>)
+
+5. 字符的忽略
+例：L009读入分子和分母“3/7”
+方法：
+	scanf("%d/%d",&up,&down);  // 整体读入
+	cin.ignore();                                // 省略单个字符“/”
+
+6. 固定位数输出
+例：L008, 一个数字固定5字符宽度
+方法
+	printf("%5d", num) / printf("%*d", width, num)
+	cout << setw(5) << setfill( ' ' )    (include<iomanip>)
+
+7. 尾部不打印空格
+方法：将循环的尾部抽出来
+	for (int i = 0; i < n-1; i++){
+		cout << a[i] << " ";
+	}
+	cout << a[n-1] << endl;
+
+注：
+1. 可以使用数组记录题目给出的复杂信息
+如L007，念数字
+	string num[10]={
+ 	   "ling", "yi", "er", "san", "si",
+	    "wu", "liu", "qi", "ba", "jiu"
+	};
+	for (i; i < n.size(); i++){
+       	 cout << num[n[i] - '0'] << " ";
+    	}
+更多例题：L016
+
+2. 使用#define lli long long int 来快速指定类型
+例：L009 分数求和
